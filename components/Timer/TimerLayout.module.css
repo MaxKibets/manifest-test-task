@@ -1,0 +1,19 @@
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 10px/16px */
+  gap: 0.625rem;
+  padding: 0.625rem;
+
+  /* 9px/16px */
+  border-radius: 0.5625rem;
+  background-color: #252525;
+  color: #ffcc8f;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  /* 14px/16px */
+  font-size: 0.875rem;
+}
