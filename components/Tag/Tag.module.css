@@ -1,0 +1,33 @@
+.tag {
+  display: inline-block;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.default {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.warning {
+  background-color: var(--yellow);
+  color: var(--black);
+  transform: rotate(4.26deg);
+}
+
+.small {
+  /* 12px */
+  font-size: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 1.75rem;
+  line-height: 1.25rem;
+}
+
+.large {
+  font-size: 1rem;
+  line-height: 1.875rem;
+
+  /* 11px 25px */
+  padding: 0.625rem 1.5625rem;
+  border-radius: 3.5rem;
+}
