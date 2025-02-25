@@ -15,8 +15,11 @@ const Terms: FC = () => {
     <div className={css.terms}>
       <p>Automatic renewal of {price} per month.</p>
       <p>
-        You may cancel by <a href="#">support@justdone.ai</a>. Our goal is customer
-        satisfaction
+        You may cancel by{" "}
+        <a href="#" className={css.link}>
+          support@justdone.ai
+        </a>
+        . Our goal is customer satisfaction
       </p>
     </div>
   );
