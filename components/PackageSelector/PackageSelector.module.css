@@ -1,0 +1,27 @@
+.selector {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+
+  /* 17px */
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--gray);
+
+  &::before {
+    content: "";
+    display: block;
+    border: 2px solid var(--gray);
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 50%;
+  }
+
+  &.active::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.233.735 5.505 7.463 2.789 4.728a1.043 1.043 0 0 0-.758-.318c-.292 0-.549.109-.757.317a1.08 1.08 0 0 0-.328.75c-.009.295.097.555.307.765l3.504 3.504c.207.206.46.317.747.317.288 0 .54-.11.747-.317L10 5.998l3.748-3.749c.208-.208.317-.464.317-.757 0-.292-.109-.549-.317-.757a1.043 1.043 0 0 0-.758-.318c-.292 0-.549.11-.757.318Z' fill='%23fff' stroke='%23fff' stroke-width='.5'/%3E%3C/svg%3E");
+    background-color: var(--green);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-color: var(--green);
+  }
+}
