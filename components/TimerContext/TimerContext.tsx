@@ -5,18 +5,15 @@ import { createContext, FC, useEffect, useState } from "react";
 import { getRemaining, getStartTimeFromStorage } from "@/utils";
 import { TIMER_DURATION, TIMER_STORAGE_KEY } from "@/constants";
 import { WithChildren } from "@/types";
-import gb from "@/services/growthbook";
+import { useTimerSplit } from "@/hooks";
 
 export const TimerContext = createContext<number | null>(null);
 
 const TimerProvider: FC<WithChildren> = ({ children }) => {
   const [time, setTime] = useState<number | null>(null);
+  const isTimerOn = useTimerSplit();
 
   useEffect(() => {
-    const isTimerOn = gb.isOn("banner_with_timer");
-
-    console.log("isTimerOn", isTimerOn);
-
     if (!isTimerOn) return;
 
     const storedTimestamp = getStartTimeFromStorage();
@@ -38,7 +35,7 @@ const TimerProvider: FC<WithChildren> = ({ children }) => {
     }, 1000);
 
     return () => clearTimeout(timeout);
-  }, [time]);
+  }, [time, isTimerOn]);
 
   return <TimerContext.Provider value={time}>{children}</TimerContext.Provider>;
 };
