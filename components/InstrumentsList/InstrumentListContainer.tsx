@@ -4,12 +4,12 @@ import { FC } from "react";
 import Marquee from "react-fast-marquee";
 
 import { WithChildren } from "@/types";
-import useMediaQuery from "@/utils";
+import useMediaQuery from "@/hooks";
 
 const InstrumentListContainer: FC<WithChildren> = ({ children }) => {
-  const isTabletOrMobile = useMediaQuery("(max-width: 1024px)");
+  const isWeb = useMediaQuery("(min-width: 1025px)");
 
-  if (isTabletOrMobile) {
+  if (!isWeb) {
     return (
       <Marquee pauseOnClick loop={0}>
         {children}
