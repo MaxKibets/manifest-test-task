@@ -1,6 +1,7 @@
-import { TimerContext } from "@/components/TimerContext/TimerContext";
-
 import { use, useEffect, useState } from "react";
+
+import { PackageContext } from "@/components/PackageContext/PackageContext";
+import { TimerContext } from "@/components/TimerContext/TimerContext";
 
 export default function useMediaQuery(mediaQuery: string) {
   const [matches, setMatches] = useState(false);
@@ -28,3 +29,5 @@ export default function useMediaQuery(mediaQuery: string) {
 }
 
 export const useTimer = () => use(TimerContext);
+
+export const usePackage = () => use(PackageContext);

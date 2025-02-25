@@ -11,4 +11,4 @@ export const TYPE = {
 
 export const TIMER_STORAGE_KEY = "t_timestamp" as const;
 
-export const TIMER_DURATION = 10 * 1000;
+export const TIMER_DURATION = 30 * 60 * 1000;
