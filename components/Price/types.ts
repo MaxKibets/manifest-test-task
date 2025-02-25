@@ -1,5 +1,5 @@
 export interface PriceProps {
-  oldPrice: number;
-  price: number;
+  oldPrice: string;
+  price: string;
   text: string;
 }
