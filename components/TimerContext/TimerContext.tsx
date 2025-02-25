@@ -5,13 +5,30 @@ import { createContext, FC, useEffect, useState } from "react";
 import { getRemaining, getStartTimeFromStorage } from "@/utils";
 import { TIMER_DURATION, TIMER_STORAGE_KEY } from "@/constants";
 import { WithChildren } from "@/types";
+import gb from "@/services/growthbook";
 
 export const TimerContext = createContext<number | null>(null);
 
 const TimerProvider: FC<WithChildren> = ({ children }) => {
   const [time, setTime] = useState<number | null>(null);
+  const [isTimerOn, setIsTimerOn] = useState<boolean>(false);
 
   useEffect(() => {
+    gb.init().then((data) => {
+      console.log("GrowthBook initialized");
+      const isOn = gb.isOn("banner_with_timer");
+      console.log(isOn, data);
+      setIsTimerOn(isOn);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!isTimerOn) {
+      localStorage.removeItem(TIMER_STORAGE_KEY);
+
+      return;
+    }
+
     const storedTimestamp = getStartTimeFromStorage();
     const startTime = storedTimestamp || Date.now();
 
@@ -31,7 +48,7 @@ const TimerProvider: FC<WithChildren> = ({ children }) => {
     }, 1000);
 
     return () => clearTimeout(timeout);
-  }, [time]);
+  }, [time, isTimerOn]);
 
   return <TimerContext.Provider value={time}>{children}</TimerContext.Provider>;
 };
