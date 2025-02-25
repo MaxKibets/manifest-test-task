@@ -1,0 +1,17 @@
+.layout {
+  /* 60px 24px */
+  margin: 3.75rem auto 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+
+  @media screen and (width >=1025px) {
+    /* 60px 48px */
+    max-width: 1140px;
+    flex-direction: row-reverse;
+
+    & > div {
+      width: 100%;
+    }
+  }
+}
