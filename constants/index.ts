@@ -7,4 +7,8 @@ export const SIZE = {
 export const TYPE = {
   DEFAULT: "default",
   WARNING: "warning",
-};
+} as const;
+
+export const TIMER_STORAGE_KEY = "t_timestamp" as const;
+
+export const TIMER_DURATION = 10 * 1000;
