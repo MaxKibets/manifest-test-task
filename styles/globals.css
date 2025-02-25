@@ -1,0 +1,46 @@
+:root {
+  /* 14px/16px */
+  --side-indention: 0.875rem;
+  --black: #181b29;
+  --gray: #22293b;
+  --white: #fff;
+  --green-light: #d7f4f3;
+  --green: #00b39b;
+  --blue: #3b71f7;
+  --yellow: #fece1f;
+  --red: #f00;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--black);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  letter-spacing: 0.15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image:
+    url("../public/rect.svg"), linear-gradient(253deg, #e3fffe 23.91%, #e6edfd 78.01%);
+  padding: 2.5rem var(--side-indention);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
