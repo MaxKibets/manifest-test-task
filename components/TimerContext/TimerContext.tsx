@@ -23,11 +23,7 @@ const TimerProvider: FC<WithChildren> = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    if (!isTimerOn) {
-      localStorage.removeItem(TIMER_STORAGE_KEY);
-
-      return;
-    }
+    if (!isTimerOn) return;
 
     const storedTimestamp = getStartTimeFromStorage();
     const startTime = storedTimestamp || Date.now();
