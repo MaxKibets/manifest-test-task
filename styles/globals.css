@@ -3,17 +3,18 @@
   --side-indention: 0.875rem;
   --black: #181b29;
   --gray: #22293b;
+  --gray-light: #747e97;
   --white: #fff;
   --green-light: #d7f4f3;
   --green: #00b39b;
   --blue: #3b71f7;
   --yellow: #fece1f;
   --red: #f00;
+  --border-radius: 1rem;
 }
 
 html {
   font-size: 16px;
-  line-height: 1.5;
 }
 
 html,
@@ -25,6 +26,7 @@ body {
 body {
   min-height: 100vh;
   color: var(--black);
+  line-height: 1.5rem;
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
   letter-spacing: 0.15px;
   -webkit-font-smoothing: antialiased;
