@@ -1,0 +1,17 @@
+.tags {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: calc(100% - 0.75rem);
+  pointer-events: none;
+
+  @media screen and (width >=375px) {
+    & {
+      left: 2.75rem;
+      right: 1.875rem;
+    }
+  }
+}
