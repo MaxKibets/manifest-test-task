@@ -1,0 +1,26 @@
+.button {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 4rem;
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  background: linear-gradient(90deg, var(--green) 0%, var(--blue) 100%);
+  max-width: 296px;
+  width: 100%;
+  margin: auto;
+  transition: all 0.2s;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  &:active {
+    filter: brightness(0.9);
+    transform: scale(0.99);
+  }
+}
