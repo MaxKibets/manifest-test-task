@@ -1,0 +1,6 @@
+.instruments {
+  /* 40px */
+  margin: 0 calc(var(--side-indention) * -1) 2.5rem;
+  display: flex;
+  justify-content: center;
+}
