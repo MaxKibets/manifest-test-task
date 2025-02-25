@@ -2,12 +2,12 @@
 
 import { FC } from "react";
 import Marquee from "react-fast-marquee";
-import { useMediaQuery } from "react-responsive";
 
 import { WithChildren } from "@/types";
+import useMediaQuery from "@/utils";
 
 const InstrumentListContainer: FC<WithChildren> = ({ children }) => {
-  const isTabletOrMobile = useMediaQuery({ maxWidth: 1024 });
+  const isTabletOrMobile = useMediaQuery("(max-width: 1024px)");
 
   if (isTabletOrMobile) {
     return (
