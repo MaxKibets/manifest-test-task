@@ -1,3 +1,5 @@
+import { TEXT } from "@/constants";
+
 export const INSTRUMENTS = [
   {
     icon: (
@@ -10,7 +12,7 @@ export const INSTRUMENTS = [
         />
       </svg>
     ),
-    text: "Paraphraser",
+    text: TEXT.INSTRUMENT.PARAPHRASER,
   },
   {
     icon: (
@@ -21,7 +23,7 @@ export const INSTRUMENTS = [
         />
       </svg>
     ),
-    text: "Grammar Check",
+    text: TEXT.INSTRUMENT.GRAMMAR_CHECK,
   },
   {
     icon: (
@@ -34,7 +36,7 @@ export const INSTRUMENTS = [
         />
       </svg>
     ),
-    text: "Plagiarism Check",
+    text: TEXT.INSTRUMENT.PLAGIARISM_CHECK,
   },
   {
     icon: (
@@ -47,7 +49,7 @@ export const INSTRUMENTS = [
         />
       </svg>
     ),
-    text: "AI Humanizer",
+    text: TEXT.INSTRUMENT.AI_HUMANIZER,
   },
   {
     icon: (
@@ -64,7 +66,7 @@ export const INSTRUMENTS = [
         />
       </svg>
     ),
-    text: "AI Detector",
+    text: TEXT.INSTRUMENT.AI_DETECTOR,
   },
   {
     icon: (
@@ -75,7 +77,7 @@ export const INSTRUMENTS = [
         />
       </svg>
     ),
-    text: "Summarizer",
+    text: TEXT.INSTRUMENT.SUMMARIZER,
   },
   {
     icon: (
@@ -86,6 +88,6 @@ export const INSTRUMENTS = [
         />
       </svg>
     ),
-    text: "Chrome Extension",
+    text: TEXT.INSTRUMENT.CHROME_EXTENSION,
   },
 ] as const;

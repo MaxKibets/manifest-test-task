@@ -3,6 +3,7 @@
 import { FC } from "react";
 
 import { WithChildren } from "@/types";
+import { TEXT } from "@/constants";
 
 import css from "./TimerLayout.module.css";
 
@@ -14,7 +15,7 @@ const TimerLayout: FC<WithChildren> = ({ children }) => (
         fill="#FFCC8F"
       />
     </svg>
-    <span>SALE ENDS IN</span>
+    <span>{TEXT.SALE_ENDS}</span>
     <span className={css.time}>{children}</span>
   </div>
 );

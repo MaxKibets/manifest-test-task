@@ -6,19 +6,20 @@ import TimerProvider from "@/components/TimerContext";
 import Button from "@/components/Button";
 import Terms from "@/components/Terms";
 import PackageProvider from "@/components/PackageContext";
+import { TEXT } from "@/constants";
 
 export default function Home() {
   return (
     <main>
       <section>
-        <Heading>Choose Your Plan:</Heading>
+        <Heading>{TEXT.HEADING}</Heading>
         <InstrumentsList />
         <PackageProvider>
           <TimerProvider>
             <Timer mediaQuery={"(max-width: 1024px)"} />
             <Packages />
           </TimerProvider>
-          <Button>Get Started</Button>
+          <Button>{TEXT.BUTTON}</Button>
           <Terms />
         </PackageProvider>
       </section>
