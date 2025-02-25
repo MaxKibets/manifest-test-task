@@ -4,35 +4,18 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  padding: 0.75rem 1rem 0.75rem 0.75rem;
+  padding: 0.75rem;
   background-color: var(--white);
   box-shadow: 0 0 0 4px var(--green-light);
-  border-radius: 1rem;
-  min-height: 5.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.2s;
 
   &.active {
     box-shadow: 0 0 0 4px var(--green);
   }
 
-  &.topIndent {
-    padding-top: 1.5rem;
-    min-height: 6.25rem;
-  }
-}
-
-.tags {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: absolute;
-  left: 1rem;
-  right: 1rem;
-  bottom: calc(100% - 0.75rem);
-
-  @media screen and (width >=375px) {
-    & {
-      left: 2.75rem;
-      right: 1.875rem;
-    }
+  @media screen and (width >=1025px) {
+    flex-wrap: wrap;
   }
 }
