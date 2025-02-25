@@ -11,18 +11,12 @@ export const TimerContext = createContext<number | null>(null);
 
 const TimerProvider: FC<WithChildren> = ({ children }) => {
   const [time, setTime] = useState<number | null>(null);
-  const [isTimerOn, setIsTimerOn] = useState<boolean>(false);
 
   useEffect(() => {
-    gb.init().then((data) => {
-      console.log("GrowthBook initialized");
-      const isOn = gb.isOn("banner_with_timer");
-      console.log(isOn, data);
-      setIsTimerOn(isOn);
-    });
-  }, []);
+    const isTimerOn = gb.isOn("banner_with_timer");
 
-  useEffect(() => {
+    console.log("isTimerOn", isTimerOn);
+
     if (!isTimerOn) return;
 
     const storedTimestamp = getStartTimeFromStorage();
@@ -44,7 +38,7 @@ const TimerProvider: FC<WithChildren> = ({ children }) => {
     }, 1000);
 
     return () => clearTimeout(timeout);
-  }, [time, isTimerOn]);
+  }, [time]);
 
   return <TimerContext.Provider value={time}>{children}</TimerContext.Provider>;
 };

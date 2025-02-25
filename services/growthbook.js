@@ -5,4 +5,6 @@ const gb = new GrowthBook({
   clientKey: process.env.NEXT_PUBLIC_GROWTHBOOK_CLIENT_KEY,
 });
 
+gb.init();
+
 export default gb;
