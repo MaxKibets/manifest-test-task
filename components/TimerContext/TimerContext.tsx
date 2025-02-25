@@ -5,16 +5,17 @@ import { createContext, FC, useEffect, useState } from "react";
 import { getRemaining, getStartTimeFromStorage } from "@/utils";
 import { TIMER_DURATION, TIMER_STORAGE_KEY } from "@/constants";
 import { WithChildren } from "@/types";
-import { useTimerSplit } from "@/hooks";
 
 export const TimerContext = createContext<number | null>(null);
 
-const TimerProvider: FC<WithChildren> = ({ children }) => {
+const TimerProvider: FC<WithChildren<{ showTimer: boolean }>> = ({
+  children,
+  showTimer,
+}) => {
   const [time, setTime] = useState<number | null>(null);
-  const isTimerOn = useTimerSplit();
 
   useEffect(() => {
-    if (!isTimerOn) return;
+    if (!showTimer) return;
 
     const storedTimestamp = getStartTimeFromStorage();
     const startTime = storedTimestamp || Date.now();
@@ -35,7 +36,7 @@ const TimerProvider: FC<WithChildren> = ({ children }) => {
     }, 1000);
 
     return () => clearTimeout(timeout);
-  }, [time, isTimerOn]);
+  }, [time, showTimer]);
 
   return <TimerContext.Provider value={time}>{children}</TimerContext.Provider>;
 };
