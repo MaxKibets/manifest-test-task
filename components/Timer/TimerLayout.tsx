@@ -15,7 +15,7 @@ const TimerLayout: FC<WithChildren> = ({ children }) => (
       />
     </svg>
     <span>SALE ENDS IN</span>
-    {children}
+    <span className={css.time}>{children}</span>
   </div>
 );
 

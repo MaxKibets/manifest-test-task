@@ -2,15 +2,16 @@
 
 import { FC } from "react";
 
-import { useTimer } from "@/hooks";
+import useMediaQuery, { useTimer } from "@/hooks";
 import { formatTime } from "@/utils";
 
 import TimerLayout from "./TimerLayout";
 
-const Timer: FC = () => {
+const Timer: FC<{ mediaQuery: string }> = ({ mediaQuery }) => {
   const time = useTimer();
+  const isVisible = useMediaQuery(mediaQuery);
 
-  if (time === null) return null;
+  if (time === null || !isVisible) return null;
 
   return <TimerLayout>{formatTime(time)}</TimerLayout>;
 };
