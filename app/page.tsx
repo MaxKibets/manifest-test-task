@@ -13,6 +13,7 @@ export default async function Home() {
   const showTimer = await getFlagValue<boolean>("banner_with_timer", false);
 
   console.log(showTimer);
+
   return (
     <main>
       <section>
